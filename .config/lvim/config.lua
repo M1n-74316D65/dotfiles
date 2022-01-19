@@ -1,6 +1,11 @@
 lvim.plugins = {
   {"sainnhe/gruvbox-material"},
+  {"shaunsingh/nord.nvim"},
+  {"sainnhe/everforest"},
   {"github/copilot.vim"},
+  {"glacambre/firenvim",
+    run = function() vim.fn['firenvim#install'](0) end
+  },
   {
   'wfxr/minimap.vim',
   run = "cargo install --locked code-minimap",
@@ -101,8 +106,10 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 local cmp = require "cmp"
-lvim.colorscheme = 'gruvbox-material'
+lvim.colorscheme = 'everforest'
+lvim.background = 'light'
 lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
+vim.g.everforest_background = 'hard'
   cmp.mapping.abort()
   local copilot_keys = vim.fn["copilot#Accept"]()
   if copilot_keys ~= "" then
