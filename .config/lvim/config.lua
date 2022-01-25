@@ -1,6 +1,7 @@
 lvim.plugins = {
   {"sainnhe/gruvbox-material"},
   {"shaunsingh/nord.nvim"},
+  {"sbdchd/neoformat"},
   {"sainnhe/everforest"},
   {"github/copilot.vim"},
   {"glacambre/firenvim",
@@ -107,6 +108,7 @@ vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 local cmp = require "cmp"
 lvim.colorscheme = 'everforest'
+vim.opt.guifont = "FiraCode Nerd Font:h10"
 lvim.background = 'light'
 lvim.builtin.cmp.mapping["<C-e>"] = function(fallback)
 vim.g.everforest_background = 'hard'
