@@ -2,6 +2,7 @@ lvim.plugins = {
   { "shaunsingh/nord.nvim" },
   { "andweeb/presence.nvim" },
   { "sbdchd/neoformat" },
+  { "catppuccin/nvim",      name = "catppuccin" },
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
@@ -69,7 +70,7 @@ lvim.plugins = {
   },
 }
 vim.opt.guifont = "FiraCode Nerd Font:h10"
-lvim.colorscheme = "nord"
+lvim.colorscheme = "catppuccin-macchiato"
 lvim.format_on_save.enabled = true
 -- Enable absolute and relative line numbers
 vim.opt.number = true
