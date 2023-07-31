@@ -5,9 +5,11 @@ set -U fish_greeting ""
 starship init fish | source
 source ~/.config/op/plugins.sh
 
+alias cls "clear"
+
 
 # aliases
-alias server "ssh m1n@192.168.1.139"
+alias server "ssh root@192.168.1.139"
 
 # fish related
 alias fishconfig 'vim ~/.config/fish/config.fish'
