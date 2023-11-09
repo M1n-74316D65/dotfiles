@@ -5,19 +5,21 @@ set -U fish_greeting ""
 starship init fish | source
 source ~/.config/op/plugins.sh
 
-alias cls "clear"
+alias cls clear
 
 
 # aliases
 alias server "ssh root@192.168.1.139"
 
+alias vi nvim
+
 # fish related
-alias fishconfig 'vim ~/.config/fish/config.fish'
+alias fishconfig 'nvim ~/.config/fish/config.fish'
 alias fishreload 'source ~/.config/fish/config.fish'
 
 # exa
-alias ls 'exa -lh --git --icons --group-directories-first --color=always'
-alias lsa 'exa -lh --git --icons --group-directories-first --color=always --all'
+alias ls 'eza -lh --git --icons --group-directories-first --color=always'
+alias lsa 'eza -lh --git --icons --group-directories-first --color=always --all'
 
 # fzf
 # fzf fuzzy file search and open with default editor
@@ -59,4 +61,3 @@ function fup
         cd ..
     end
 end
-

@@ -1,5 +1,6 @@
 lvim.plugins = {
   { "shaunsingh/nord.nvim" },
+  { "luisiacc/gruvbox-baby" },
   { "andweeb/presence.nvim" },
   { "sbdchd/neoformat" },
   { "catppuccin/nvim",      name = "catppuccin" },
@@ -9,11 +10,6 @@ lvim.plugins = {
     config = function()
       require("todo-comments").setup()
     end,
-  },
-  {
-    'tzachar/cmp-tabnine',
-    build = './install.sh',
-    dependencies = 'hrsh7th/nvim-cmp',
   },
   {
     'wfxr/minimap.vim',
@@ -70,7 +66,7 @@ lvim.plugins = {
   },
 }
 vim.opt.guifont = "FiraCode Nerd Font:h10"
-lvim.colorscheme = "catppuccin-macchiato"
+lvim.colorscheme = "gruvbox-baby"
 lvim.format_on_save.enabled = true
 -- Enable absolute and relative line numbers
 vim.opt.number = true
