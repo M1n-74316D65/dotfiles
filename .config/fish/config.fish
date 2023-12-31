@@ -3,7 +3,6 @@ if status is-interactive
 end
 set -U fish_greeting ""
 starship init fish | source
-source ~/.config/op/plugins.sh
 
 alias cls clear
 
