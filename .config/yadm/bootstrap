@@ -1,0 +1,15 @@
+# export TERMINAL=gnome-terminal
+
+# echo 156 | bash -c "$(wget -qO- https://git.io/vQgMr)"
+
+if [ -f "/etc/arch-release" ]; then
+  echo "# ARCH detected"
+  if  pacman -Qi paru > /dev/null ; then
+    paru -Sy neovim lazygit discord spotify github-desktop-bin thorium-browser-bin easyeffects lsp-plugins anytype-bin
+  else
+      sudo pacman -S --needed base-devel
+      git clone https://aur.archlinux.org/paru.git
+      cd paru
+      makepkg -si
+  fi
+fi
