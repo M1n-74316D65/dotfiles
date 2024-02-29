@@ -60,3 +60,6 @@ function fup
         cd ..
     end
 end
+
+zoxide init fish | source
+atuin init fish | source
