@@ -4,16 +4,18 @@ end
 set -U fish_greeting ""
 starship init fish | source
 
-alias cls clear
-
-
 # aliases
 alias server "ssh root@192.168.1.139"
+alias nixconfig "sudo hx /etc/nixos/configuration.nix"
+alias nixapply "sudo nixos-rebuild switch"
+alias nixupgrade "sudo nixos-rebuild switch --upgrade"
 
+alias cls clear
 alias vi nvim
+alias cd z
 
 # fish related
-alias fishconfig 'nvim ~/.config/fish/config.fish'
+alias fishconfig 'hx ~/.config/fish/config.fish'
 alias fishreload 'source ~/.config/fish/config.fish'
 
 # exa
