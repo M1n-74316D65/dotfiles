@@ -12,7 +12,6 @@ alias nixupgrade "sudo nixos-rebuild switch --upgrade"
 
 alias cls clear
 alias vi nvim
-alias cd z
 
 # fish related
 alias fishconfig 'hx ~/.config/fish/config.fish'
