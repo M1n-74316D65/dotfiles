@@ -2,6 +2,10 @@
 
 # echo 156 | bash -c "$(wget -qO- https://git.io/vQgMr)"
 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+cargo binstall eza zoxide atuin --no-confirm
+
 if [ -f "/etc/arch-release" ]; then
   echo "# ARCH detected"
   if  pacman -Qi paru > /dev/null ; then
