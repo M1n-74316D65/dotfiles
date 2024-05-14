@@ -3,7 +3,7 @@ if [ -f "/etc/arch-release" ]; then
   echo "# ARCH detected"
   if pacman -Qi paru >/dev/null; then
     echo "# Installing apps with paru"
-    paru -Sy flatpak neovim lazygit github-desktop-bin thorium-browser-bin easyeffects lsp-plugins anytype-bin
+    paru -Sy zsh flatpak neovim lazygit github-desktop-bin thorium-browser-bin easyeffects lsp-plugins anytype-bin
     flatpak install -y com.mattjakeman.ExtensionManager com.mattjakeman.ExtensionManager com.discordapp.Discord io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.spotify.Client com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
   else
     echo "# Installing paru"
@@ -22,7 +22,7 @@ else
   sudo dnf group upgrade --with-optional Multimedia
   # My apps
   echo "# Installing my apps"
-  sudo dnf install -y adw-gtk3-theme neovim lazygit discord github-desktop-bin easyeffects lsp-plugins
+  sudo dnf install -y zsh adw-gtk3-theme neovim lazygit discord github-desktop-bin easyeffects lsp-plugins
   flatpak install -y com.mattjakeman.ExtensionManager com.mattjakeman.ExtensionManager com.discordapp.Discord io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.spotify.Client com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 fi
 
