@@ -109,6 +109,7 @@ eval "$(starship init zsh)"
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
+# echo 'eval "$(atuin init zsh)"' >> ~/.zshrc
 
 alias server="ssh root@192.168.1.139"
 alias pico="ssh -L 1337:localhost:80 -N pico-ui@pgs.sh"
@@ -145,9 +146,4 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 zinit load atuinsh/atuin
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(atuin init zsh)"
