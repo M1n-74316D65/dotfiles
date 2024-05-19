@@ -193,8 +193,8 @@ in
     # Package Managers
     nix
     nixpkgs-fmt
-    cargo
-    cargo-binstall
+    unstable.cargo
+    unstable.cargo-binstall
     unstable.nh
 
     # Development Tools
@@ -206,6 +206,7 @@ in
     vscode
     github-desktop
     git
+    pkg-config-unwrapped
     code-minimap
     hugo
     starship
@@ -235,6 +236,7 @@ in
     eza
     yadm
     fastfetch
+    openssl
     piper
     protonup-qt
     blackbox-terminal
