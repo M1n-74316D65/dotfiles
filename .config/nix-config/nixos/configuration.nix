@@ -26,6 +26,8 @@ in
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./zsh.nix
+    ./game.nix
+    ./gnome-extensions.nix
   ];
 
   nixpkgs = {
@@ -84,6 +86,7 @@ in
     fallbackDns = [ "76.76.2.22#1lcmy9scphm.dns.controld.com" "76.76.10.22#1lcmy9scphm.dns.controld.com" ];
     dnsovertls = "true";
   };
+  services.ratbagd.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -119,6 +122,7 @@ in
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ]; # to load the amdgpu kernel module
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -186,51 +190,66 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
+    # Package Managers
     nix
-    adw-gtk3
+    nixpkgs-fmt
     cargo
     cargo-binstall
-    ckb-next
-    zsh
-    protonup-qt
-    gnumake
+    unstable.nh
+
+    # Development Tools
     gcc
-    neovim
-    code-minimap
-    vscode
-    nil
-    hugo
-    gnome.gnome-terminal
+    gnumake
     libclang
-    nerdfonts
-    pavucontrol
+    neovim
+    vim
+    vscode
+    github-desktop
     git
-    nixpkgs-fmt
+    code-minimap
+    hugo
+    starship
+    shell_gpt
+    carapace
+    nil
+
+    # GNOME Utilities
+    gnome.gnome-terminal
     gnome.gnome-tweaks
-    wineWowPackages.waylandFull
+    gnome-solanum
+    gnome-extension-manager
+
+    # Appearance
+    adw-gtk3
     nordzy-cursor-theme
     papirus-icon-theme
-    starship
-    tdesktop
-    vim
-    yadm
-    gnome-extension-manager
-    wget
-    atuin
-    zoxide
-    gnome-solanum
+    nerdfonts
+
+    # Multimedia and Audio
     easyeffects
     lsp-plugins
-    eza
-    fastfetch
     spotify
+    pavucontrol
+
+    # System Utilities
+    eza
+    yadm
+    fastfetch
+    piper
+    protonup-qt
     blackbox-terminal
-    shell_gpt
-    nix
-    carapace
-    unstable.nh
+    wget
+    wine
+    wineWowPackages.waylandFull
+
+    # Communication
+    tdesktop
+
+    # Shell Enhancements
+    zsh
+    zoxide
+    atuin
+
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

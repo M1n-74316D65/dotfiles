@@ -77,7 +77,7 @@ plugins=(git
   zoxide
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -113,6 +113,9 @@ source <(carapace _carapace)
 
 alias server="ssh root@192.168.1.139"
 alias pico="ssh -L 1337:localhost:80 -N pico-ui@pgs.sh"
+alias nixos-config="z ~/.config/nix-config"
+alias update-nixos="nh os switch ~/.config/nix-config"
+alias update-flake="nix flake update"
 
 alias cls="clear"
 alias vi="nvim"
