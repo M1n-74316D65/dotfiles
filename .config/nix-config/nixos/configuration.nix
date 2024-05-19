@@ -1,12 +1,18 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
+{ inputs
+, lib
+, config
+, pkgs
+, ...
 }:
+let
+  unstable = import inputs.unstable {
+    system = pkgs.system;
+    # Uncomment this if you need an unfree package from unstable.
+    config.allowUnfree = true;
+  };
+in
 {
   # You can import other NixOS modules here
   imports = [
@@ -19,6 +25,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {
@@ -41,27 +48,31 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-    };
-    # Opinionated: disable channels
-    channel.enable = false;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Opinionated: disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+      };
+      # Opinionated: disable channels
+      channel.enable = false;
 
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
+      # Opinionated: make flake registry and nix path match flake inputs
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+    };
 
   # FIXME: Add the rest of your current configuration
 
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   networking.nameservers = [ "76.76.2.22#1lcmy9scphm.dns.controld.com" "76.76.10.22#1lcmy9scphm.dns.controld.com" ];
@@ -151,7 +162,33 @@
     description = "David MG";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+    ];
+  };
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome.geary
+    gnome-tour
+    gnome.yelp
+    gnome-console
+    snapshot
+    gnome.gnome-music
+    gnome.simple-scan
+    gnome.gnome-maps
+    epiphany
+  ];
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  # nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    nix
     adw-gtk3
     cargo
     cargo-binstall
@@ -191,34 +228,10 @@
     spotify
     blackbox-terminal
     shell_gpt
-    ];
-  };
-  
-    environment.gnome.excludePackages = with pkgs; [
-    gnome.geary
-    gnome-tour
-    gnome.yelp
-    gnome-console
-    snapshot
-    gnome.gnome-music
-    gnome.simple-scan
-    gnome.gnome-maps
-    epiphany
+    nix
+    carapace
+    unstable.nh
   ];
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
