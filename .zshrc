@@ -148,5 +148,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 ### End of Zinit's installer chunk
 
+eval "$(zoxide init zsh)"
 zinit load atuinsh/atuin
 eval "$(atuin init zsh)"
