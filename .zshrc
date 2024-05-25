@@ -136,6 +136,41 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
+# pastes.sh 
+function uppaste {
+    if [[ "$1" == "help" ]]; then
+        echo "Doesnt expires"
+    else
+        rsync "$@" pastes.sh:/ expires=false
+    fi
+}
+
+function uppast {
+    if [[ "$1" == "help" ]]; then
+        echo "Expires in 90 days"
+    else
+        rsync "$@" pastes.sh:/
+    fi
+}
+
+function uppasteh {
+    if [[ "$1" == "help" ]]; then
+        echo "Its hidden"
+    else
+        rsync "$@" pastes.sh:/ hidden=true
+    fi
+}
+
+function uppasth {
+    if [[ "$1" == "help" ]]; then
+        echo "expires in 90 days and is hidden"
+    else
+        rsync "$@" pastes.sh:/ expires=false hidden=true
+    fi
+}
+
+# 
+
 alias server="ssh root@192.168.1.139"
 alias pico="ssh -L 1337:localhost:80 -N pico-ui@pgs.sh"
 alias nixos-config="z ~/.config/nix-config"
