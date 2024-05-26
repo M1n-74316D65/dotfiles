@@ -132,9 +132,6 @@ autoload -Uz compinit
 compinit
 
 eval "$(starship init zsh)"
-export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
 
 # pastes.sh 
 function uppaste {
@@ -188,4 +185,3 @@ alias lsa='eza -lh --git --icons --group-directories-first --color=always --all'
 
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
-source ~/.antigen.zsh
