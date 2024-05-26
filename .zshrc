@@ -180,3 +180,7 @@ alias pa="pastol"
 
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+
+export EDITOR=/bin/nvim
+export CHARM_HOST="192.168.1.139"
+export OPENAI_API_KEY=$(skate get mods-gpt-api)
