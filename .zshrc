@@ -178,10 +178,5 @@ alias cls="clear"
 alias vi="nvim"
 alias pa="pastol"
 
-# exa
-
-alias ls='eza -lh --git --icons --group-directories-first --color=always'
-alias lsa='eza -lh --git --icons --group-directories-first --color=always --all'
-
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
