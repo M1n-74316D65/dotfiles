@@ -48,6 +48,8 @@ zmodule zsh-users/zsh-completions --fpath src
 # completion must be sourced after all modules that add completion definitions.
 zmodule completion
 zmodule MenkeTechnologies/zsh-more-completions
+zmodule Aloxaf/gencomp
+zmodule RobSis/zsh-completion-generator
 
 #
 # Modules that must be initialized last
