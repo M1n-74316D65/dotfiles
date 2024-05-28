@@ -96,17 +96,17 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
-  if (( ${+commands[curl]} )); then
-    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+    if (( ${+commands[curl]} )); then
+        curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
         https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  else
-    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+    else
+        mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
         https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
-  fi
+    fi
 fi
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
 if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
-  source ${ZIM_HOME}/zimfw.zsh init -q
+    source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 # Initialize modules.
 source ${ZIM_HOME}/init.zsh
@@ -133,7 +133,7 @@ compinit
 
 eval "$(starship init zsh)"
 
-# pastes.sh 
+# pastes.sh
 function uppaste {
     if [[ "$1" == "help" ]]; then
         echo "Doesnt expires"
@@ -166,7 +166,21 @@ function uppasth {
     fi
 }
 
-# 
+function downpaste {
+    if [[ "$1" == "help" ]]; then
+        echo "download pastes"
+    else
+        rsync pastes.sh:/"$1" .
+    fi
+}
+
+function listpastes {
+    sftp -b - pastes.sh << EOF
+ls
+EOF
+}
+
+#
 
 alias server="ssh root@192.168.1.139"
 alias pico="ssh -L 1337:localhost:80 -N pico-ui@pgs.sh"
@@ -184,4 +198,5 @@ eval "$(atuin init zsh)"
 export EDITOR=/bin/nvim
 export CHARM_HOST="192.168.1.139"
 export OPENAI_API_KEY=$(skate get mods-gpt-api)
-export PATH="$HOME/.local/bin:$PATH"                                      
+export PATH="$HOME/.local/bin:$PATH"
+
