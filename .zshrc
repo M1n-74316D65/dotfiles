@@ -189,7 +189,8 @@ alias update-nixos="nh os switch ~/.config/nix-config"
 alias update-flake="nix flake update"
 
 alias cls="clear"
-alias vi="nvim"
+alias vi="lvim"
+alias nvim="lvim"
 alias pa="pastol"
 
 eval "$(zoxide init zsh)"
