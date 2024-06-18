@@ -50,6 +50,8 @@ zmodule completion
 zmodule MenkeTechnologies/zsh-more-completions
 zmodule Aloxaf/gencomp
 zmodule RobSis/zsh-completion-generator
+zmodule atuinsh/atuin
+zmodule lukechilds/zsh-nvm
 
 #
 # Modules that must be initialized last

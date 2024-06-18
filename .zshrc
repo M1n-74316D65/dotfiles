@@ -192,9 +192,10 @@ alias cls="clear"
 alias vi="lvim"
 alias nvim="lvim"
 alias pa="pastol"
+alias explain='gh copilot explain'
+alias suggest='gh copilot suggest'
 
 eval "$(zoxide init zsh)"
-eval "$(atuin init zsh)"
 
 export EDITOR=/bin/nvim
 export CHARM_HOST="192.168.1.139"
@@ -202,3 +203,13 @@ export OPENAI_API_KEY=$(skate get mods-gpt-api)
 export api_omg_lol=$(skate get api_omg.lol)
 export PATH="$HOME/.local/bin:$PATH"
 
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/home/m1n/.bun/_bun" ] && source "/home/m1n/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
