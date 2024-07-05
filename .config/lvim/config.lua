@@ -6,7 +6,10 @@
 
 lvim.plugins = {
   { "ellisonleao/gruvbox.nvim" },
-  { "andweeb/presence.nvim" },
+  {
+    "jiriks74/presence.nvim",
+    event = "UIEnter",
+  },
   { "github/copilot.vim" },
   {
     url = 'https://github.com/fresh2dev/zellij.vim.git',
