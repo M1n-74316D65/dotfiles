@@ -7,18 +7,11 @@
 lvim.plugins = {
   { "ellisonleao/gruvbox.nvim" },
   { "andweeb/presence.nvim" },
-
+  { "github/copilot.vim" },
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require("codeium").setup({
-      })
-    end
-  },
+    url = 'https://github.com/fresh2dev/zellij.vim.git',
+    lazy = false,
+  }
 }
 
 lvim.colorscheme = "gruvbox"

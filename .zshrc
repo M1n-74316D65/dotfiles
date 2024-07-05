@@ -129,7 +129,6 @@ unset key
 # }}} End configuration added by Zim install
 
 autoload -Uz compinit
-compinit
 
 eval "$(starship init zsh)"
 
@@ -202,8 +201,6 @@ export CHARM_HOST="192.168.1.139"
 export OPENAI_API_KEY=$(skate get mods-gpt-api)
 export api_omg_lol=$(skate get api_omg.lol)
 export PATH="$HOME/.local/bin:$PATH"
-
-. "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 
