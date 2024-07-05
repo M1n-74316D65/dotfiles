@@ -23,6 +23,8 @@ zmodule archive
 
 zmodule exa
 
+zmodule kiesman99/zim-zoxide
+
 #
 # Prompt
 #

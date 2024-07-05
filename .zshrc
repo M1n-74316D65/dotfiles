@@ -203,6 +203,7 @@ export api_omg_lol=$(skate get api_omg.lol)
 export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(atuin init zsh)"
+eval "$(thefuck --alias fuck)"
 
 # bun completions
 [ -s "/home/m1n/.bun/_bun" ] && source "/home/m1n/.bun/_bun"
