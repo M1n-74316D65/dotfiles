@@ -10,7 +10,6 @@ alias server "ssh root@192.168.1.139"
 alias cls clear
 alias vi nvim
 alias pa pastol
-alias nvim lvim
 alias pa pastol
 alias explain 'gh copilot explain'
 alias suggest 'gh copilot suggest'
