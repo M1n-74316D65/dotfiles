@@ -1,39 +1,7 @@
+// Gruvbox Dark theme  for the `zjstatus` plugin
+// Usage: just copy the content to the body of the zjstatus declaration in your config or layout file, see `config.kdl`
+{
 
-default_layout "terminal"
-
-// set the theme
-// theme "catppuccin-mocha"
-theme "gruvbox-dark"
-ui {
-    pane_frames {
-        rounded_corners true
-    }
-  }
-
-plugins {
-    // Good practise: use aliases for plugins instead of direct reference in layout
-
-    // -----------------------
-    // built-in plugins
-    // -----------------------
-    tab-bar location="zellij:tab-bar"
-    status-bar location="zellij:status-bar"
-    strider location="zellij:strider"
-    compact-bar location="zellij:compact-bar"
-    session-manager location="zellij:session-manager"
-    welcome-screen location="zellij:session-manager" {
-        welcome_screen true
-    }
-    filepicker location="zellij:strider" {
-        cwd "/"
-    }
-
-    // -----------------------
-    // extra plugins
-    // -----------------------
-
-    // zjstatus
-    zjstatus location="file:~/.config/zellij/plugins/zjstatus.wasm" {
     format_left   "#[bg=239,fg=248] {session} {mode}#[bg=237]{tabs}"
     format_center "{notifications}"
     format_right  "#[bg=237,fg=239]#[bg=239,fg=246] {command_user}@{command_host} #[bg=239,fg=248]#[bg=248,fg=237] {datetime} "
@@ -92,9 +60,4 @@ plugins {
     datetime          "{format}"
     datetime_format   "%Y-%m-%d %H:%M"
     datetime_timezone "Europe/Stockholm"
-    }
-//    forgot-plugin location="https://github.com/karimould/zellij-forgot/releases/download/0.4.0/zellij_forgot.wasm" {
-//        "LOAD_ZELLIJ_BINDINGS" "true"
-//        floating true
-//    }
 }
