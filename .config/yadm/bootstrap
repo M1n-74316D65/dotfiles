@@ -17,13 +17,13 @@ else
   echo "# Fedora detected"
   sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
   sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-  sudo dnf install -y zsh gnome-tweaks gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+  sudo dnf install -y fish zsh gnome-tweaks gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
   sudo dnf install -y lame\* --exclude=lame-devel
   sudo dnf group upgrade --with-optional Multimedia
   # My apps
   echo "# Installing my apps"
-  sudo dnf install -y zsh adw-gtk3-theme neovim lazygit discord github-desktop-bin easyeffects lsp-plugins
-  flatpak install -y com.mattjakeman.ExtensionManager com.mattjakeman.ExtensionManager com.discordapp.Discord io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.spotify.Client com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+  sudo dnf install -y zsh adw-gtk3-theme pavucontrol ckb-next telegram-desktop neovim lazygit easyeffects lsp-plugins
+  flatpak install -y com.mattjakeman.ExtensionManager com.mattjakeman.ExtensionManager com.discordapp.Discord io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 fi
 
 # Rust things
