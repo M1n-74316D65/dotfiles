@@ -13,6 +13,7 @@ alias pa pastol
 alias pa pastol
 alias explain 'gh copilot explain'
 alias suggest 'gh copilot suggest'
+alias pico 'ssh -L 1337:localhost:80 -N pico-ui@pgs.sh'
 
 # fish related
 alias fishconfig 'nvim ~/.config/fish/config.fish'
@@ -20,7 +21,7 @@ alias fishreload 'source ~/.config/fish/config.fish'
 
 zoxide init fish | source
 atuin init fish | source
-thefuck --alias fuck | source 
+thefuck --alias fuck | source
 
 set -x EDITOR /bin/nvim
 set -x CHARM_HOST "192.168.1.139"
