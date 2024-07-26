@@ -91,7 +91,7 @@ plugins {
 
     datetime          "{format}"
     datetime_format   "%Y-%m-%d %H:%M"
-    datetime_timezone "Europe/Stockholm"
+    datetime_timezone "Europe/Madrid"
     }
 //    forgot-plugin location="https://github.com/karimould/zellij-forgot/releases/download/0.4.0/zellij_forgot.wasm" {
 //        "LOAD_ZELLIJ_BINDINGS" "true"
