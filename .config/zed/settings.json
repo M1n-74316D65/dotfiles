@@ -7,12 +7,17 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "vim_mode": true,
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light",
-    "dark": "Gruvbox Dark"
+    "dark": "Vesper"
   },
   "buffer_font_family": "CommitMono",
   "features": {
