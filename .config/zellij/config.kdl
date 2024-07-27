@@ -1,5 +1,5 @@
-
 default_layout "terminal"
+default_shell "fish"
 
 // set the theme
 // theme "catppuccin-mocha"
