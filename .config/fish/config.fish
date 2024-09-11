@@ -21,13 +21,12 @@ alias fishreload 'source ~/.config/fish/config.fish'
 
 zoxide init fish | source
 atuin init fish | source
-thefuck --alias fuck | source
 
 set -x EDITOR /bin/nvim
 set -x CHARM_HOST "192.168.1.139"
-set -x OPENAI_API_KEY (skate get mods-gpt-api)
-set -x api_omg_lol (skate get api_omg.lol)
 set -x PATH $HOME/.local/bin $PATH
+
+nvm use lts -s
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"

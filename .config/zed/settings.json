@@ -7,7 +7,20 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
-  "vim_mode": true,
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "vim_mode": false,
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
@@ -17,10 +30,7 @@
   "theme": {
     "mode": "system",
     "light": "Gruvbox Light",
-    "dark": "Vesper"
+    "dark": "Gruvbox Dark"
   },
-  "buffer_font_family": "CommitMono",
-  "features": {
-    "inline_completion_provider": "supermaven"
-  }
+  "buffer_font_family": "CommitMono"
 }
