@@ -21,6 +21,7 @@ alias fishreload 'source ~/.config/fish/config.fish'
 
 zoxide init fish | source
 atuin init fish | source
+direnv hook fish | source
 
 set -x EDITOR /bin/nvim
 set -x CHARM_HOST "192.168.1.139"

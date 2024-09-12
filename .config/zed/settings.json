@@ -32,5 +32,13 @@
     "light": "Gruvbox Light",
     "dark": "Gruvbox Dark"
   },
-  "buffer_font_family": "CommitMono"
+  "buffer_font_family": "CommitMono",
+  "lsp": {
+    "discord_presence": {
+      "initialization_options": {
+        "state": "Working with {language}",
+        "details": "github.com/M1n-74316D65"
+      }
+    }
+  }
 }
