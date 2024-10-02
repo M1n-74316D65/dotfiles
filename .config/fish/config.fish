@@ -32,3 +32,5 @@ nvm use lts -s
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+complete -c dnf5 -n "__fish_seen_subcommand_from install" -xa "(__dnf5_list_available_packages) (__fish_complete_suffix .rpm)"
