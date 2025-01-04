@@ -1,7 +1,6 @@
 install_arch_packages() {
   echo "# Installing apps with paru"
-  paru -Sy fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol zsh flatpak neovim lazygit easyeffects lsp-plugins
-  flatpak install -y com.mattjakeman.ExtensionManager io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+  paru -Sy fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol flatpak neovim lazygit easyeffects lsp-plugins
 }
 
 install_paru() {
@@ -18,17 +17,22 @@ install_fedora_packages() {
   echo "# Fedora detected"
   sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
   sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
   echo "# Installing my apps"
   sudo dnf install -y adw-gtk3-theme pavucontrol piper telegram-desktop neovim easyeffects lsp-plugins
-  flatpak install -y com.mattjakeman.ExtensionManager it.mijorus.gearlever io.github.shiftey.Desktop cafe.avery.Delfin com.raggesilver.BlackBox com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
-  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-  cargo binstall eza zoxide atuin starship pastol --no-confirm
+}
+
+install_flatpak() {
+  echo "# Installing flatpaks"
+  flatpak install -y de.haeckerfelix.Shortwave org.gnome.Podcasts com.mattjakeman.ExtensionManager it.mijorus.gearlever io.github.shiftey.Desktop cafe.avery.Delfin com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 }
 
 setup_rust() {
   echo "# Rust things"
-  sudo hostnamectl set-hostname "M1n-Linux"
-  # curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+  source "$HOME/.cargo/env.fish"
+  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+  cargo binstall eza zoxide atuin starship pastol --no-confirm
 }
 
 main() {
@@ -45,6 +49,7 @@ main() {
   fi
 
   setup_rust
+  install_flatpak
 }
 
 main
