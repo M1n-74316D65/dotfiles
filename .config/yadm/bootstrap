@@ -1,6 +1,6 @@
 install_arch_packages() {
   echo "# Installing apps with paru"
-  paru -Sy fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol flatpak neovim lazygit easyeffects lsp-plugins
+  paru -Sy fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol flatpak neovim lazygit easyeffects lsp-plugins zed
 }
 
 install_paru() {
@@ -17,9 +17,9 @@ install_fedora_packages() {
   echo "# Fedora detected"
   sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
   sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-  sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+  sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
   echo "# Installing my apps"
-  sudo dnf install -y adw-gtk3-theme pavucontrol piper telegram-desktop neovim easyeffects lsp-plugins
+  sudo dnf install -y adw-gtk3-theme pavucontrol piper telegram-desktop neovim easyeffects lsp-plugins zed
 }
 
 install_flatpak() {
