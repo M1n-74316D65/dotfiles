@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="128"
+   viewBox="0 0 128 128"
+   width="128"
+   version="1.1"
+   id="svg5248"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs5252">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1302"
+       x="-0.012000846"
+       width="1.0240017"
+       y="-0.011999155"
+       height="1.0239983">
+      <feGaussianBlur
+         stdDeviation="2.0803224"
+         id="feGaussianBlur1304" />
+    </filter>
+    <linearGradient
+       id="bg-gradient-2">
+      <stop
+         style="stop-color:#3584e4;stop-opacity:1"
+         offset="0"
+         id="stop13402" />
+      <stop
+         style="stop-color:#62a0ea;stop-opacity:1"
+         offset="1"
+         id="stop13404" />
+    </linearGradient>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1509">
+      <path
+         id="path1511"
+         d="M 192,-164 H 88 c 0,0 -40,0 -40,40 V 4 h 416 v -96 c 0,0 0,-40 -40,-40 H 224 Z"
+         style="display:inline;opacity:1;vector-effect:none;fill:#c9b8a7;fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter1529"
+       x="-0.10846153"
+       width="1.2169231"
+       y="-0.13428571"
+       height="1.2685714">
+      <feGaussianBlur
+         stdDeviation="18.8"
+         id="feGaussianBlur1531" />
+    </filter>
+    <linearGradient
+       id="linearGradient888">
+      <stop
+         style="stop-color:#99c1f1;stop-opacity:1"
+         offset="0"
+         id="stop884" />
+      <stop
+         style="stop-color:#c3e5e7;stop-opacity:1"
+         offset="1"
+         id="stop886" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#bg-gradient-2"
+       id="linearGradient5836"
+       gradientUnits="userSpaceOnUse"
+       x1="64"
+       y1="756"
+       x2="480"
+       y2="756" />
+    <linearGradient
+       xlink:href="#linearGradient888"
+       id="linearGradient5838"
+       gradientUnits="userSpaceOnUse"
+       x1="152.89844"
+       y1="-38.796875"
+       x2="447.30859"
+       y2="316" />
+  </defs>
+  <linearGradient
+     id="a"
+     gradientUnits="userSpaceOnUse"
+     x1="11.999989"
+     x2="115.99999"
+     y1="64"
+     y2="64">
+    <stop
+       offset="0"
+       stop-color="#3d3846"
+       id="stop5214" />
+    <stop
+       offset="0.05"
+       stop-color="#77767b"
+       id="stop5216" />
+    <stop
+       offset="0.1"
+       stop-color="#5e5c64"
+       id="stop5218" />
+    <stop
+       offset="0.899999"
+       stop-color="#504e56"
+       id="stop5220" />
+    <stop
+       offset="0.95"
+       stop-color="#77767b"
+       id="stop5222" />
+    <stop
+       offset="1"
+       stop-color="#3d3846"
+       id="stop5224" />
+  </linearGradient>
+  <linearGradient
+     id="b"
+     gradientUnits="userSpaceOnUse"
+     x1="12"
+     x2="112.04102"
+     y1="60"
+     y2="80.988281">
+    <stop
+       offset="0"
+       stop-color="#77767b"
+       id="stop5227" />
+    <stop
+       offset="0.384443"
+       stop-color="#9a9996"
+       id="stop5229" />
+    <stop
+       offset="0.720567"
+       stop-color="#77767b"
+       id="stop5231" />
+    <stop
+       offset="1"
+       stop-color="#68666f"
+       id="stop5233" />
+  </linearGradient>
+  <g
+     transform="matrix(0.2511615,0,0,0.2511615,-0.29292947,52.434794)"
+     id="g5798"
+     style="fill:#c9b8a7;fill-opacity:1;stroke:#a08f7f;stroke-opacity:1">
+    <path
+       id="path5786"
+       d="m 88,-162 c 0,0 -40,0 -40,40 L 47.964844,6 h 0.0332 L 47.964844,254.0938 424,254 c 40,0 40,-40 40,-40 V 6 -42 -90 c 0,0 0,-40 -40,-40 H 224 l -32,-32 z"
+       style="display:inline;opacity:0.2;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;filter:url(#filter1302);enable-background:new" />
+    <path
+       style="display:inline;opacity:1;fill:url(#linearGradient5836);fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
+       d="M 208,672 H 104 c 0,0 -40,0 -40,40 v 128 h 416 v -96 c 0,0 0,-40 -40,-40 H 240 Z"
+       transform="translate(-16,-836)"
+       id="path5788" />
+    <path
+       id="path5790"
+       d="m 256,-80 -32,32 H 88 c 0,0 -40,0 -40,40 v 264 h 376 c 40,0 40,-40 40,-40 V -40 c 0,-40 -40,-40 -40,-40 z"
+       style="display:inline;opacity:0.1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;filter:url(#filter1529);enable-background:new"
+       clip-path="url(#clipPath1509)" />
+    <path
+       style="display:inline;opacity:1;fill:url(#linearGradient5838);fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
+       d="m 256,-84 -32,32 H 88 c 0,0 -40,0 -40,40 v 264 h 376 c 40,0 40,-40 40,-40 V -44 c 0,-40 -40,-40 -40,-40 z"
+       id="path5792" />
+    <path
+       style="font-variation-settings:normal;display:inline;opacity:1;fill:#99c1f1;fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new;stop-color:#000000;stop-opacity:1"
+       d="m 480,1042 c 0,0 0,40 -40,40 l -375.998047,0.094 -0.0039,6 L 440,1088 c 40,0 40,-40 40,-40 z"
+       transform="translate(-16,-836)"
+       id="path5794" />
+    <path
+       style="display:inline;opacity:0.3;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:26.0669;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;paint-order:normal;enable-background:new"
+       d="m 272,752 -32,32 H 104 c 0,0 -40,0 -40,40 v 4 c 0,-40 40,-42 40,-42 h 136.59099 l 32,-32 H 440 c 5.38035,0 40,2 40,42 v -4 c 0,-40 -40,-40 -40,-40 z"
+       id="path5796"
+       transform="translate(-16,-836)" />
+  </g>
+  <g
+     id="surface105959-1"
+     transform="matrix(3.4941816,0,0,3.4941816,134.02619,48.099307)"
+     style="fill:#3f8ae5;fill-opacity:1;stroke:none;stroke-width:0.893536" />
+  <title
+     id="title9167">Gnome Symbolic Icon Theme</title>
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,575)"
+     style="display:inline;fill:#438de6;fill-opacity:1"
+     id="layer1" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-2501.1832,1749.4)"
+     style="display:inline;fill:#438de6;fill-opacity:1"
+     id="layer9" />
+  <path
+     d="m 63.68363,51.0115 c -13.1367,0 -23.68359,10.875 -23.68359,24 0,13.253907 10.74609,24 24,24 13.25391,0 24,-10.746093 24,-24 0,-13.253907 -10.74609,-24 -24,-24 -0.1056,0 -0.2109,0 -0.31641,0 z m -5.90625,7.382814 c 0.70314,0.05859 1.3125,0.515622 1.57032,1.171872 0.0351,0.679689 -0.48048,1.265628 -1.16016,1.3125 -0.67968,0 -1.23048,0.550782 -1.23048,1.230471 v 3.550779 c 0,1.324221 -1.06638,2.402346 -2.39061,2.402346 -1.32423,0 -2.39064,1.066404 -2.40234,2.390625 0,1.3125 -1.06641,2.390625 -2.39064,2.390625 -1.3242,0 -2.39061,1.066404 -2.39061,2.390625 0,1.324218 1.06641,2.390625 2.39061,2.390625 1.32423,0 2.40234,1.066404 2.39064,2.402343 v 8.566407 c -3.84375,-3.410157 -6.04689,-8.296875 -6.04689,-13.429689 0,-4.476561 1.6875,-8.789061 4.69923,-12.082029 l 0.1641,-0.15234 c 0.70311,-0.75 1.46484,-1.441404 2.28516,-2.050782 l 0.1173,-0.09375 c 1.34766,-0.996093 2.8242,-1.804686 4.40625,-2.390622 z m 13.59375,1.300779 h 1.78125 c 1.44141,0.84375 2.75391,1.886721 3.91407,3.105471 -0.1056,0.0234 -0.2109,0.03516 -0.31641,0.03516 h -5.37891 c -0.86718,0 -1.55859,-0.703125 -1.55859,-1.570311 0,-0.878907 0.69141,-1.570314 1.55859,-1.570314 z m -6.15234,2.613282 c 0.96093,0 1.73436,0.773439 1.73436,1.746093 v 1.898439 c 0,0.960936 -0.77343,1.746093 -1.73436,1.746093 -0.96093,0 -1.74609,-0.785157 -1.74609,-1.746093 v -1.898439 c 0,-0.972654 0.78516,-1.746093 1.74609,-1.746093 z M 72.08597,64.324 h 6.25782 c 2.28516,3 3.5625,6.65625 3.64452,10.429686 -0.375,0.316407 -0.83202,0.492189 -1.3242,0.503907 l -3.38673,-0.0234 c -2.01561,0 -3.64452,1.640625 -3.65625,3.65625 v 4.042968 c 0.012,1.324218 -1.06641,2.390625 -2.37891,2.390625 -1.33593,0.0117 -2.40234,-1.066407 -2.40234,-2.390625 v -2.613288 c 0.2694,-0.9375 -0.2694,-1.910157 -1.19532,-2.191407 -1.20702,0 -2.17968,-0.972654 -2.17968,-2.179686 v -3.714843 c -0.1173,-1.417971 0.94923,-2.648439 2.35548,-2.753907 1.18359,0 2.13279,-0.949218 2.14452,-2.132814 v -0.902343 c 0,-1.171875 0.94923,-2.121093 2.12109,-2.132811 z m 0,0"
+     fill="#222222"
+     id="path1"
+     style="fill:#438de6;fill-opacity:1;stroke-width:3" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,-65)"
+     id="layer13"
+     style="fill:#438de6;fill-opacity:1" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,575)"
+     style="display:inline;fill:#438de6;fill-opacity:1"
+     id="g6387" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,575)"
+     style="display:inline;fill:#438de6;fill-opacity:1"
+     id="layer10" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,575)"
+     id="layer12"
+     style="fill:#438de6;fill-opacity:1" />
+  <g
+     transform="matrix(3.2,0,0,3.2,-1729.9825,575)"
+     style="display:inline;fill:#438de6;fill-opacity:1"
+     id="layer11" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
