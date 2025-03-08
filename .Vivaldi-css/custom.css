@@ -1,0 +1,24 @@
+/* Remove minimize and maximize button styles */
+#browser.linux .window-buttongroup button.window-minimize,
+#browser.linux .window-buttongroup button.window-maximize,
+#browser.linux .window-buttongroup button.window-restore {
+    display: none;
+}
+
+/* Close button styles */
+#browser.linux .window-buttongroup button.window-close svg path {
+    display: none;
+}
+
+/* Hide the specified toolbar */
+.toolbar.toolbar-tabbar.sync-and-trash-container.top {
+    display: none;
+}
+
+div.window-buttongroup {
+    padding-right: 0.5rem;
+}
+
+#browser.linux:not(.native).address-top .toolbar:has(.window-buttongroup.on-mainbar) {
+    padding-right: 0;
+}
