@@ -6,14 +6,17 @@ if status is-interactive
     # Initialize starship prompt
     starship init fish | source
 
+    # Get pastes.sh commands
+    source ~/.config/fish/my_modules/pastes.fish
+
     # Aliases
     alias server "ssh root@192.168.1.139"
-    alias cls "clear"
-    alias vi "nvim"
-    alias pa "pastol"
+    alias cls clear
+    alias vi nvim
+    alias pa pastol
     alias explain "gh copilot explain"
     alias suggest "gh copilot suggest"
-    alias pico "ssh -L 1337:localhost:80 -N pico-ui@pgs.sh"
+    alias pico "ssh pico.sh"
     alias update "paru -Syu"
 
     # Fish related aliases
@@ -26,7 +29,7 @@ if status is-interactive
     direnv hook fish | source
 
     # Environment variables
-    set -x EDITOR "/bin/nvim"
+    set -x EDITOR /bin/nvim
     set -x CHARM_HOST "192.168.1.139"
     set -x PATH "$HOME/.local/bin" $PATH
 
@@ -37,6 +40,4 @@ if status is-interactive
     set --export BUN_INSTALL "$HOME/.bun"
     set --export PATH "$BUN_INSTALL/bin" $PATH
 
-    # DNF5 completion
-    complete -c dnf5 -n "__fish_seen_subcommand_from install" -xa "(__dnf5_list_available_packages) (__fish_complete_suffix .rpm)"
 end
