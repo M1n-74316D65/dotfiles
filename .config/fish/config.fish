@@ -17,7 +17,10 @@ if status is-interactive
     alias explain "gh copilot explain"
     alias suggest "gh copilot suggest"
     alias pico "ssh pico.sh"
+    alias text "ssh texto-plano.xyz"
     alias update "paru -Syu"
+    alias zola "flatpak run org.getzola.zola"
+    alias pa "hut paste"
 
     # Fish related aliases
     alias fishconfig "nvim ~/.config/fish/config.fish"
