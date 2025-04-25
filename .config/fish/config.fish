@@ -21,6 +21,7 @@ if status is-interactive
     alias update "paru -Syu"
     alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
+    alias radio "mpv https://radio.m1n.land"
 
     # Fish related aliases
     alias fishconfig "nvim ~/.config/fish/config.fish"
