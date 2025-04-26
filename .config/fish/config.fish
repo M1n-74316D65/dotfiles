@@ -22,6 +22,7 @@ if status is-interactive
     alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
     alias radio "cls; mpv https://radio.m1n.land --volume=60"
+    alias music ncmpcpp
     alias note dnote
     alias gopher ncgopher
 
