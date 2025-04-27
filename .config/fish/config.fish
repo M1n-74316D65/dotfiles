@@ -49,9 +49,9 @@ if status is-interactive
     set --export PATH "$BUN_INSTALL/bin" $PATH
 
     # Solo lanza Zellij si estamos en Ghostty
-    if test "$TERM" = xterm-ghostty
-        eval (zellij setup --generate-auto-start fish | string collect)
-    end
+    # if test "$TERM" = xterm-ghostty
+    # eval (zellij setup --generate-auto-start fish | string collect)
+    # end
 
     function ytdlp-bandcamp
         yt-dlp -o "%(artist)s/%(album)s/%(title)s.%(ext)s" $argv
