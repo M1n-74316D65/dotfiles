@@ -17,7 +17,7 @@ if status is-interactive
     alias explain "gh copilot explain"
     alias suggest "gh copilot suggest"
     alias pico "ssh pico.sh"
-    alias texto "ssh texto-plano.xyz"
+    alias texto "ssh texto-plano.xyz -i ~/.ssh/texto-plano"
     alias update "paru -Syu"
     alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
