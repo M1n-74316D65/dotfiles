@@ -39,6 +39,7 @@ if status is-interactive
     set -x EDITOR /bin/nvim
     set -x CHARM_HOST "192.168.1.139"
     set -x PATH "$HOME/.local/bin" $PATH
+    set -x PATH "$HOME/go/bin" $PATH
     set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
     # Use Node.js LTS version with nvm
