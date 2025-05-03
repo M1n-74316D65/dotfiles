@@ -25,6 +25,7 @@ if status is-interactive
     alias music ncmpcpp
     alias note dnote
     alias gopher ncgopher
+    alias irc senpai
 
     # Fish related aliases
     alias fishconfig "nvim ~/.config/fish/config.fish"
