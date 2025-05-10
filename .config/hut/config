@@ -1,0 +1,3 @@
+instance "sr.ht" {
+	access-token-cmd gopass show -o sourcehut-token
+}
