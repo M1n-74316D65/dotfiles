@@ -58,4 +58,8 @@ if status is-interactive
     function ytdlp-bandcamp
         yt-dlp -o "%(artist)s/%(album)s/%(title)s.%(ext)s" $argv
     end
+    function paru-remove
+        paru -Rns $argv
+    end
+
 end
