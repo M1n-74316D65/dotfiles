@@ -1,0 +1,27 @@
+[ui]
+theme=default
+
+[connection]
+defaccount=m1n@texto-plano.xyz
+account=m1n@texto-plano.xyz
+
+[presence]
+autoaway.mode=away
+autoaway.check=true
+autoaway.awaytime=10
+autoaway.awaymessage=Ausente
+
+[logging]
+chlog=true
+grlog=true
+maxsize=1048576
+rotate=true
+
+[alias]
+entrar=/join general@conference.texto-plano.xyz
+
+[otr]
+warn=true
+log=on
+policy=manual
+
