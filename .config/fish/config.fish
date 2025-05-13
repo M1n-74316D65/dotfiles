@@ -17,7 +17,8 @@ if status is-interactive
     alias explain "gh copilot explain"
     alias suggest "gh copilot suggest"
     alias pico "ssh pico.sh"
-    alias texto "ssh texto-plano.xyz -i ~/.ssh/texto-plano"
+    # alias texto "ssh texto-plano.xyz -i ~/.ssh/texto-plano"
+    # alias xinu "ssh m1n@xinu.me -i ~/.ssh/xinu"
     alias update "paru -Syu"
     alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
@@ -62,4 +63,5 @@ if status is-interactive
         paru -Rns $argv
     end
 
+    eval (keychain --eval --quiet id_rsa texto-plano srht tildegit xinu)
 end
