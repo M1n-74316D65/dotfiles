@@ -20,13 +20,15 @@ if status is-interactive
     alias texto "ssh texto-plano.xyz -i ~/.ssh/texto-plano"
     alias xinu "ssh m1n@xinu.me -i ~/.ssh/xinu"
     alias update "paru -Syu"
-    alias zola "flatpak run org.getzola.zola"
+    # alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
     alias radio "cls; mpv https://radio.m1n.land --volume=60"
     alias music ncmpcpp
     alias note dnote
     alias gopher ncgopher
     alias irc senpai
+    alias jj-push "jj git push -c @-"
+    alias sudo sudo-rs
 
     # Fish related aliases
     alias fishconfig "nvim ~/.config/fish/config.fish"
@@ -64,4 +66,8 @@ if status is-interactive
     end
 
     eval (keychain --eval --quiet id_rsa texto-plano srht tildegit xinu)
+
+    function perplexity
+        pplx search -q $argv | glow
+    end
 end
