@@ -44,6 +44,7 @@ if status is-interactive
     set -x CHARM_HOST "192.168.1.139"
     set -x PATH "$HOME/.local/bin" $PATH
     set -x PATH "$HOME/go/bin" $PATH
+    set -x PATH "$HOME/.config/herd-lite/bin" $PATH
     set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
     # Use Node.js LTS version with nvm
@@ -70,4 +71,10 @@ if status is-interactive
     function perplexity
         pplx search -q $argv | glow
     end
+
+    function cdtmp
+        set tmpdir (mktemp -d --suffix="-cdtmp")
+        cd $tmpdir
+    end
+
 end
