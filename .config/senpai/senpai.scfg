@@ -1,4 +1,4 @@
 nickname m1n
 address chat.sr.ht
 username m1n
-password-cmd gopass show -o sourcehut-token
+password-cmd op read "op://Personal/Hut/credencial"
