@@ -1,8 +1,7 @@
 window-padding-x = 5
 window-padding-y = 5
 window-theme = ghostty
-# theme = dark:GruvboxDark,light:GruvboxLight
-theme = "/home/m1n/.cache/wal/colors-ghostty"
+theme = dark:GruvboxDark,light:GruvboxLight
 font-family = "CommitMono"
 command = zellij
 confirm-close-surface = false

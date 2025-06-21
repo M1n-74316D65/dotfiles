@@ -17,8 +17,8 @@ if status is-interactive
     alias explain "gh copilot explain"
     alias suggest "gh copilot suggest"
     alias pico "ssh pico.sh"
-    alias texto "ssh texto-plano.xyz -i ~/.ssh/texto-plano"
-    alias xinu "ssh m1n@xinu.me -i ~/.ssh/xinu"
+    alias texto "ssh texto-plano.xyz"
+    alias xinu "ssh m1n@xinu.me"
     alias update "paru -Syu"
     # alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
@@ -65,8 +65,6 @@ if status is-interactive
     function paru-remove
         paru -Rns $argv
     end
-
-    eval (keychain --eval --quiet id_rsa texto-plano srht tildegit xinu)
 
     function perplexity
         pplx search -q $argv | glow
