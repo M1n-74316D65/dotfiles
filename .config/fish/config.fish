@@ -19,6 +19,7 @@ if status is-interactive
     alias pico "ssh pico.sh"
     alias texto "ssh texto-plano.xyz"
     alias xinu "ssh m1n@xinu.me"
+    alias uber "ssh min@belinda.uberspace.de"
     alias update "paru -Syu"
     # alias zola "flatpak run org.getzola.zola"
     alias pa "hut paste"
