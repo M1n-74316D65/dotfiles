@@ -1,55 +1,198 @@
+set -euo pipefail
+
+log_info() {
+    echo "INFO: $1"
+}
+
+log_error() {
+    echo "ERROR: $1" >&2
+}
+
+check_command() {
+    if ! command -v "$1" >/dev/null 2>&1; then
+        log_error "$1 is not installed"
+        return 1
+    fi
+    return 0
+}
+
 install_arch_packages() {
-  echo "# Installing apps with paru"
-  paru -Sy fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol flatpak neovim lazygit easyeffects lsp-plugins zed
+    log_info "Installing apps with paru"
+
+    local packages=(fish eza zoxide atuin starship piper zellij adw-gtk3-git pavucontrol flatpak neovim lazygit easyeffects lsp-plugins zed)
+
+    if ! check_command paru; then
+        log_error "paru is not installed. Please run install_paru first."
+        return 1
+    fi
+
+    if ! paru -Sy "${packages[@]}"; then
+        log_error "Failed to install some packages"
+        return 1
+    fi
+
+    log_info "Arch packages installed successfully"
 }
 
 install_paru() {
-  echo "# Installing paru"
-  sudo pacman -S --needed base-devel
-  git clone https://aur.archlinux.org/paru.git
-  cd paru
-  makepkg -si
-  cd ..
-  rm -rf paru
+    log_info "Installing paru"
+
+    if ! check_command sudo; then
+        log_error "sudo is required for package installation"
+        return 1
+    fi
+
+    if ! sudo pacman -S --needed base-devel; then
+        log_error "Failed to install base-devel"
+        return 1
+    fi
+
+    local paru_dir="paru"
+
+    if [ -d "$paru_dir" ]; then
+        log_info "Removing existing paru directory"
+        rm -rf "$paru_dir"
+    fi
+
+    if ! git clone https://aur.archlinux.org/paru.git; then
+        log_error "Failed to clone paru repository"
+        return 1
+    fi
+
+    cd "$paru_dir"
+
+    if ! makepkg -si; then
+        log_error "Failed to build and install paru"
+        cd ..
+        rm -rf "$paru_dir"
+        return 1
+    fi
+
+    cd ..
+    rm -rf "$paru_dir"
+
+    log_info "paru installed successfully"
 }
 
 install_fedora_packages() {
-  echo "# Fedora detected"
-  sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-  sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-  sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
-  echo "# Installing my apps"
-  sudo dnf install -y adw-gtk3-theme pavucontrol piper telegram-desktop neovim easyeffects lsp-plugins zed
+    log_info "Fedora detected"
+
+    if ! check_command sudo; then
+        log_error "sudo is required for package installation"
+        return 1
+    fi
+
+    if ! check_command dnf; then
+        log_error "dnf is not available"
+        return 1
+    fi
+
+    local fedora_version
+    fedora_version=$(rpm -E %fedora)
+
+    log_info "Installing RPM Fusion repositories"
+    sudo dnf install -y "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-${fedora_version}.noarch.rpm"
+    sudo dnf install -y "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${fedora_version}.noarch.rpm"
+    sudo dnf install -y --nogpgcheck --repofrompath "terra,https://repos.fyralabs.com/terra${fedora_version}" terra-release
+
+    log_info "Installing applications"
+    local packages=(adw-gtk3-theme pavucontrol piper telegram-desktop neovim easyeffects lsp-plugins zed)
+
+    if ! sudo dnf install -y "${packages[@]}"; then
+        log_error "Failed to install some Fedora packages"
+        return 1
+    fi
+
+    log_info "Fedora packages installed successfully"
 }
 
 install_flatpak() {
-  echo "# Installing flatpaks"
-  flatpak install -y de.haeckerfelix.Shortwave org.gnome.Podcasts com.mattjakeman.ExtensionManager it.mijorus.gearlever io.github.shiftey.Desktop cafe.avery.Delfin com.vysp3r.ProtonPlus io.typora.Typora org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
+    log_info "Installing flatpaks"
+
+    if ! check_command flatpak; then
+        log_error "flatpak is not installed"
+        return 1
+    fi
+
+    local flatpaks=(
+        de.haeckerfelix.Shortwave
+        org.gnome.Podcasts
+        com.mattjakeman.ExtensionManager
+        it.mijorus.gearlever
+        io.github.shiftey.Desktop
+        cafe.avery.Delfin
+        com.vysp3r.ProtonPlus
+        io.typora.Typora
+        org.gtk.Gtk3theme.adw-gtk3
+        org.gtk.Gtk3theme.adw-gtk3-dark
+    )
+
+    if ! flatpak install -y "${flatpaks[@]}"; then
+        log_error "Failed to install some flatpaks"
+        return 1
+    fi
+
+    log_info "Flatpaks installed successfully"
 }
 
 setup_rust() {
-  echo "# Rust things"
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-  source "$HOME/.cargo/env.fish"
-  curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-  cargo binstall eza zoxide atuin starship pastol --no-confirm
+    log_info "Setting up Rust environment"
+
+    if ! check_command curl; then
+        log_error "curl is required for Rust installation"
+        return 1
+    fi
+
+    log_info "Installing Rust"
+    if ! curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y; then
+        log_error "Failed to install Rust"
+        return 1
+    fi
+
+    # Source cargo environment for current session
+    if [ -f "$HOME/.cargo/env" ]; then
+        source "$HOME/.cargo/env"
+    else
+        log_error "Cargo environment file not found"
+        return 1
+    fi
+
+    log_info "Installing cargo-binstall"
+    if ! curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash; then
+        log_error "Failed to install cargo-binstall"
+        return 1
+    fi
+
+    log_info "Installing Rust tools"
+    local tools=(eza zoxide atuin starship pastol)
+
+    if ! cargo binstall "${tools[@]}" --no-confirm; then
+        log_error "Failed to install some Rust tools"
+        return 1
+    fi
+
+    log_info "Rust setup completed successfully"
 }
 
 main() {
-  if [ -f "/etc/arch-release" ]; then
-    echo "# ARCH detected"
-    if pacman -Qi paru >/dev/null; then
-      install_arch_packages
-    else
-      install_paru
-      install_arch_packages
-    fi
-  else
-    install_fedora_packages
-  fi
+    log_info "Starting bootstrap process"
 
-  setup_rust
-  install_flatpak
+    if [ -f "/etc/arch-release" ]; then
+        log_info "ARCH Linux detected"
+        if pacman -Qi paru >/dev/null 2>&1; then
+            install_arch_packages
+        else
+            install_paru
+            install_arch_packages
+        fi
+    else
+        install_fedora_packages
+    fi
+
+    install_flatpak
+    setup_rust
+
+    log_info "Bootstrap process completed successfully"
 }
 
 main
