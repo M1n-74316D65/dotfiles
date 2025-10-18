@@ -7,15 +7,35 @@
 // custom settings, run the `zed: Open Default Settings` command
 // from the command palette
 {
+  "language_models": {
+    "openai_compatible": {
+      "Z.ai": {
+        "api_url": "https://api.z.ai/api/coding/paas/v4",
+        "available_models": [
+          {
+            "name": "GLM-4.6",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": false
+            }
+          }
+        ]
+      }
+    }
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
   "agent": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "Z.ai",
+      "model": "GLM-4.6"
     },
-    "version": "2"
   },
   "collaboration_panel": {
     "button": false
