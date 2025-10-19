@@ -19,8 +19,6 @@ background-blur = 10
 
 # Font Configuration
 font-family = "CommitMono"
-font-size = 14
-font-style = normal
 
 # Shell and Terminal
 command = zellij
