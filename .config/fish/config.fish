@@ -44,10 +44,7 @@ if status is-interactive
     # Application aliases
     alias cls clear
     alias radio "cls; mpv https://radio.m1n.land --volume=60"
-    alias music ncmpcpp
     alias note dnote
-    alias gopher ncgopher
-    alias irc senpai
 
     # Fish configuration aliases
     alias fishconfig "nvim ~/.config/fish/config.fish"
@@ -62,13 +59,10 @@ if status is-interactive
         paru -Rns $argv
     end
 
-    function perplexity
-        pplx search -q $argv | glow
-    end
-
     function cdtmp
         set tmpdir (mktemp -d --suffix="-cdtmp")
         cd $tmpdir
     end
 
 end
+
